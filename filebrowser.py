@@ -1,8 +1,21 @@
 # browser setting override
+from bpy_extras.io_utils import ExportHelper, ImportHelper
+from bpy.props import StringProperty, BoolProperty
 
-class OverrideFileBrowserSettingsProperties(PropertyGroup):
+class OverrideFileBrowserSettingsProperties(bpy.types.Operator, ImportHelper):
     """Add-on Properties"""
 
+    filter_glob: StringProperty(
+        default='*.jpg;*.jpeg;*.png;*.tif;*.tiff;*.bmp',
+        options={'HIDDEN'}
+    )
+    
+    some_boolean: BoolProperty(
+        name='Do a thing',
+        description='Do a thing with the file you\'ve selected',
+        default=True,
+    )
+    
     override = bpy.props.BoolProperty(
         name="Override Display Settings",
         default=True
