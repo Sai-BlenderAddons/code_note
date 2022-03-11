@@ -1,4 +1,7 @@
 # browser setting override
+# https://docs.blender.org/api/current/bpy.types.FileSelectParams.html
+
+
 from bpy_extras.io_utils import ExportHelper, ImportHelper
 from bpy.props import StringProperty, BoolProperty
 
